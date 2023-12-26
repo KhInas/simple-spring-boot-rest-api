@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import dto.TestPerson;
+import com.example.demo.dto.TestPerson;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,7 +16,7 @@ public class TestController {
         return "Hello";
     }
 @RequestMapping(value = "/person", method = RequestMethod.POST, produces = {"application/json"})
-public TestPerson testpost(@RequestBody dto.TestPerson testPerson){
+public TestPerson testpost(@RequestBody TestPerson testPerson){
         testPerson.setFirstname(testPerson.getFirstname() + "from server");
 return testPerson;
 
